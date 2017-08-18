@@ -10,11 +10,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { StudentService } from "./services/student.service";
 import { StudentListComponent } from './student-list/student-list.component';
+import { AddStudentComponent } from './add-student/add-student.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentListComponent
+    StudentListComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,9 @@ export class StudentService {
     return this.httpService.get(this.studentUrl).catch(this.handleError);
   }
 
+  addStudent(student){
+    return this.httpService.post(this.studentUrl,student).catch(this.handleError);
+  }
   private handleError(err: HttpErrorResponse){
     console.log(err.message);
     return Observable.throw(err.message);
