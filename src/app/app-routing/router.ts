@@ -17,8 +17,7 @@ export const router:Routes = [
     {
         path:'students/:id',component:StudentDetailComponent
     },
-    
     {
-        path:'',redirectTo:'sutdents',pathMatch:'full'
+        path:'',redirectTo:'students',pathMatch:'full'
     }
 ]

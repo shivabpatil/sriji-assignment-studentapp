@@ -24,7 +24,6 @@ export class StudentListComponent implements OnInit {
 
   ngOnInit() {
     console.log("inside on init ");
-    
     this.studentService.getStudents().subscribe(students=>{
       this.students = students;
       this.filteredStudents = this.students;

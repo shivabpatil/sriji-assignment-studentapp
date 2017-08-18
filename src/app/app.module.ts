@@ -7,6 +7,7 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
+import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { StudentService } from "./services/student.service";
@@ -14,6 +15,7 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { DeleteDailogComponent } from './delete-dailog/delete-dailog.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
     StudentListComponent,
     AddStudentComponent,
     StudentDetailComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    DeleteDailogComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
     RouterModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpModule
   ],
   providers: [ StudentService ],
   bootstrap: [AppComponent]

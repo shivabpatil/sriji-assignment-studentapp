@@ -20,7 +20,7 @@
                 <div class="row">
                     <h4>Filtered by Name: {{listFilter}}</h4>
                 </div>
-                <div class="row" *ngIf="students && students.length">
+                <div class="row" *ngIf="filteredStudents && filteredStudents.length > 0">
                     <table class="table table-striped">
                         <th>Roll No</th>
                         <th>Name </th>
