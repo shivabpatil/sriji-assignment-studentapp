@@ -20,15 +20,17 @@
                 <div class="row">
                     <h4>Filter by: </h4>
                 </div>
-                <div class="row">
+                <div class="row" *ngIf="students && students.length">
                     <table class="table table-striped">
                         <th>Roll No</th>
                         <th>Name </th>
                         <th>Branch</th>
+                        <th></th>
                         <tr *ngFor="let student of students">
                             <td>{{student.rollNo}}</td>
                             <td>{{student.name}}</td>
                             <td>{{student.branch}}</td>
+                            <td><a [routerLink]="['/students',student._id]"> View Details</a></td>
                         </tr>
                     </table>
                 </div>

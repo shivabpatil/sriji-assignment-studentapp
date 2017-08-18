@@ -8,7 +8,9 @@ import { StudentService } from "../services/student.service";
 export class StudentListComponent implements OnInit {
   students:any[];
   errorMessage:any;
-  constructor(public studentService:StudentService) { }
+  constructor(public studentService:StudentService) { 
+    
+  }
 
   ngOnInit() {
     this.studentService.getStudents().subscribe(students=>{

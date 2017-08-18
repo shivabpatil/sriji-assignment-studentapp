@@ -18,6 +18,11 @@ export class StudentService {
   addStudent(student){
     return this.httpService.post(this.studentUrl,student).catch(this.handleError);
   }
+
+  getStudent(id){
+    return this.httpService.get(this.studentUrl+'/'+id).do(data=>{console.log(data)}).catch(this.handleError);
+    //return this.getStudents().map((students)=>students.find(s => s._id === id));
+  }
   private handleError(err: HttpErrorResponse){
     console.log(err.message);
     return Observable.throw(err.message);
