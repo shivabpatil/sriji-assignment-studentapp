@@ -6,7 +6,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import 'hammerjs';
 import { AppComponent } from './app.component';
 import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing/app-routing.module";
+import { StudentService } from "./services/student.service";
 import { StudentListComponent } from './student-list/student-list.component';
 
 @NgModule({
@@ -20,9 +22,10 @@ import { StudentListComponent } from './student-list/student-list.component';
     MaterialModule,
     FlexLayoutModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ StudentService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

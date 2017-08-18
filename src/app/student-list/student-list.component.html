@@ -25,10 +25,10 @@
                         <th>Roll No</th>
                         <th>Name </th>
                         <th>Branch</th>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        <tr *ngFor="let student of students">
+                            <td>{{student.rollNo}}</td>
+                            <td>{{student.name}}</td>
+                            <td>{{student.branch}}</td>
                         </tr>
                     </table>
                 </div>
