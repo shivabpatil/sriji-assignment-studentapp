@@ -5,6 +5,8 @@ import { MaterialModule } from '@angular/material'
 import { FlexLayoutModule } from "@angular/flex-layout";
 import 'hammerjs';
 import { AppComponent } from './app.component';
+import { RouterModule } from "@angular/router";
+import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { StudentListComponent } from './student-list/student-list.component';
 
 @NgModule({
@@ -16,7 +18,9 @@ import { StudentListComponent } from './student-list/student-list.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
