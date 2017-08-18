@@ -24,9 +24,13 @@ export class StudentListComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.route.data['_value'].students);
-   this.students = this.route.snapshot.data['students'];
-   this.filteredStudents = this.students
+  //   console.log(this.route.data['_value'].students);
+  //  this.students = this.route.snapshot.data['students'];
+  //  this.filteredStudents = this.students
+  this.studentService.getStudents().subscribe(students=>{
+    this.students = students;
+    this.filteredStudents = this.students;
+  });
   }
  
 performFilter(filterBy:string):any{

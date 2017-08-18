@@ -7,7 +7,7 @@ import { StudentsListResolverService } from "../services/students-list-resolver.
 import { DeleteStudentComponent } from '../delete-student/delete-student.component';
 export const router:Routes = [
     {
-        path:'students',component:StudentListComponent,resolve:{students:StudentsListResolverService}
+        path:'students',component:StudentListComponent
     },
     {
         path:'addstudent',component:AddStudentComponent
@@ -25,3 +25,7 @@ export const router:Routes = [
         path:'',redirectTo:'students',pathMatch:'full'
     }
 ]
+
+//  {
+//         path:'students',component:StudentListComponent,resolve:{students:StudentsListResolverService}
+//     },
