@@ -23,7 +23,8 @@ export class AddStudentComponent implements OnInit {
   onSubmit(){
     this.studentService.addStudent(this.student).subscribe(student =>{
       this.addedStudent = student;
+      this.router.navigate(['/students']);
     },error => this.handleError = error)
-    this.router.navigate(['/students']);
+    
   }
 }

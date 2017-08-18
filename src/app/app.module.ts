@@ -16,7 +16,8 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
-import { DeleteDailogComponent } from './delete-dailog/delete-dailog.component';
+
+import { DeleteStudentComponent } from './delete-student/delete-student.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { DeleteDailogComponent } from './delete-dailog/delete-dailog.component';
     AddStudentComponent,
     StudentDetailComponent,
     EditStudentComponent,
-    DeleteDailogComponent
+    DeleteStudentComponent
   ],
   imports: [
     BrowserModule,

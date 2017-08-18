@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from "../services/student.service";
-import { ActivatedRoute  } from "@angular/router";
+import { ActivatedRoute,Router } from "@angular/router";
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
@@ -20,7 +20,7 @@ export class StudentListComponent implements OnInit {
     console.log(this._listFilter);
     this.filteredStudents = this.listFilter?this.performFilter(this.listFilter):this.students;
   }
-  constructor(public studentService:StudentService,private route:ActivatedRoute) {  
+  constructor(public studentService:StudentService,private route:ActivatedRoute, private router:Router) {  
   }
 
   ngOnInit() {
@@ -28,16 +28,9 @@ export class StudentListComponent implements OnInit {
    this.students = this.route.snapshot.data['students'];
    this.filteredStudents = this.students
   }
-
+ 
 performFilter(filterBy:string):any{
     filterBy = filterBy.toLocaleLowerCase();
     return this.students.filter((student)=>(student.name.toLocaleLowerCase().indexOf(filterBy)!=-1));
-  }
-  
- removeStudent(id){
-    alert("deleting the student");
-    this.studentService.deleteStudent(id).subscribe(s=>{
-      console.log("Deleted Student")
-    },error=>this.errorMessage=error);
   }
 }

@@ -34,8 +34,9 @@ export class EditStudentComponent implements OnInit {
    onSubmit(){
     this.studentService.updateStudent(this.student._id,this.student).then(student =>{
       this.updatedStudent = student;
+      this.getPath();
     },error => this.handleError = error)
-    this.getPath();
+    
   
   }
 

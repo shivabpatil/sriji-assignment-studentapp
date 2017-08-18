@@ -4,6 +4,7 @@ import { AddStudentComponent } from '../add-student/add-student.component';
 import { StudentDetailComponent } from '../student-detail/student-detail.component';
 import { EditStudentComponent } from '../edit-student/edit-student.component';
 import { StudentsListResolverService } from "../services/students-list-resolver.service";
+import { DeleteStudentComponent } from '../delete-student/delete-student.component';
 export const router:Routes = [
     {
         path:'students',component:StudentListComponent,resolve:{students:StudentsListResolverService}
@@ -16,6 +17,9 @@ export const router:Routes = [
     },
     {
         path:'students/:id',component:StudentDetailComponent
+    },
+    {
+        path:'deletestudents/:id',component:DeleteStudentComponent
     },
     {
         path:'',redirectTo:'students',pathMatch:'full'
