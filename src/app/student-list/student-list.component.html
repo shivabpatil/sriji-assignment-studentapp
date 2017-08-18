@@ -27,11 +27,13 @@
                         <th>Branch</th>
                         <th></th>
                         <th></th>
+                        <th></th>
                         <tr *ngFor="let student of filteredStudents">
                             <td>{{student.rollNo}}</td>
                             <td>{{student.name}}</td>
                             <td>{{student.branch}}</td>
                             <td><a [routerLink]="['/students',student._id]"> View Details</a></td>
+                            <td><a [routerLink]="['/editstudents',student._id]"> Edit Student</a></td>
                             <td><button class="btn btn-default" (click)="removeStudent(student._id)"><span class="glyphicon glyphicon-trash"></span></button></td>
                         </tr>
                     </table>

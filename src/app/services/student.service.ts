@@ -25,6 +25,10 @@ export class StudentService {
     //return this.getStudents().map((students)=>students.find(s => s._id === id));
   }
 
+  updateStudent(id,student){
+    return this.httpService.put(this.studentUrl+'/'+id,student).catch(this.handleError);
+  }
+
   deleteStudent(id){
     return this.httpService.delete(this.studentUrl+'/'+id).catch(this.handleError);
   }

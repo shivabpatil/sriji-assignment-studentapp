@@ -13,13 +13,15 @@ import { StudentService } from "./services/student.service";
 import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
     AddStudentComponent,
-    StudentDetailComponent
+    StudentDetailComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,
