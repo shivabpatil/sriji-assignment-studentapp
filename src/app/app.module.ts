@@ -11,6 +11,7 @@ import { HttpModule } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { StudentService } from "./services/student.service";
+import { StudentsListResolverService } from "./services/students-list-resolver.service";
 import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
@@ -37,7 +38,7 @@ import { DeleteDailogComponent } from './delete-dailog/delete-dailog.component';
     HttpClientModule,
     HttpModule
   ],
-  providers: [ StudentService ],
+  providers: [ StudentService,StudentsListResolverService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

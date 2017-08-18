@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from "../services/student.service";
+import { ActivatedRoute  } from "@angular/router";
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
@@ -19,15 +20,13 @@ export class StudentListComponent implements OnInit {
     console.log(this._listFilter);
     this.filteredStudents = this.listFilter?this.performFilter(this.listFilter):this.students;
   }
-  constructor(public studentService:StudentService) {  
+  constructor(public studentService:StudentService,private route:ActivatedRoute) {  
   }
 
   ngOnInit() {
-    console.log("inside on init ");
-    this.studentService.getStudents().subscribe(students=>{
-      this.students = students;
-      this.filteredStudents = this.students;
-    },error => this.errorMessage=<any>error);
+    console.log(this.route.data['_value'].students);
+   this.students = this.route.snapshot.data['students'];
+   this.filteredStudents = this.students
   }
 
 performFilter(filterBy:string):any{
