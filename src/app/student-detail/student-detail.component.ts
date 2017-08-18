@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from "@angular/router";
+import { MdDialog } from '@angular/material';
 import { StudentService } from "../services/student.service";
 @Component({
   selector: 'app-student-detail',
@@ -9,7 +10,8 @@ import { StudentService } from "../services/student.service";
 export class StudentDetailComponent implements OnInit {
   student:any;
   handleError:any;
-  constructor(private  studentService:StudentService,private activeRoute:ActivatedRoute,private router:Router) { }
+  selectedId:string;
+  constructor(public dialog: MdDialog,private studentService:StudentService,private activeRoute:ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
     let id = this.activeRoute.snapshot.paramMap.get('id');
@@ -22,5 +24,7 @@ export class StudentDetailComponent implements OnInit {
    onBack(){
     this.router.navigate(['/students']);
   }
+
+  
 
 }

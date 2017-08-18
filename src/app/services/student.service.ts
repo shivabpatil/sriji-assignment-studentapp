@@ -13,6 +13,7 @@ export class StudentService {
 
   getStudents(){
     return this.httpService.get(this.studentUrl).catch(this.handleError);
+   // return this.httpService.get(this.studentUrl).toPromise().then(response => JSON.stringify(response)).catch(this.handleError);
   }
 
   addStudent(student){
@@ -23,6 +24,11 @@ export class StudentService {
     return this.httpService.get(this.studentUrl+'/'+id).do(data=>{console.log(data)}).catch(this.handleError);
     //return this.getStudents().map((students)=>students.find(s => s._id === id));
   }
+
+  deleteStudent(id){
+    return this.httpService.delete(this.studentUrl+'/'+id).catch(this.handleError);
+  }
+  
   private handleError(err: HttpErrorResponse){
     console.log(err.message);
     return Observable.throw(err.message);

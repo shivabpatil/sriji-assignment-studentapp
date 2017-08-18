@@ -8,8 +8,8 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6 ">
                         <div class="form-inline form-group">
-                            <label for="exampleInputEmail1">Filter By:</label>
-                            <input type="text" class="form-control" placeholder="">
+                            <label for="exampleInputEmail1">Filter By Name:</label>
+                            <input type="text" class="form-control" placeholder="" [(ngModel)]='listFilter'>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 ">
@@ -18,7 +18,7 @@
 
                 </div>
                 <div class="row">
-                    <h4>Filter by: </h4>
+                    <h4>Filtered by Name: {{listFilter}}</h4>
                 </div>
                 <div class="row" *ngIf="students && students.length">
                     <table class="table table-striped">
@@ -26,11 +26,13 @@
                         <th>Name </th>
                         <th>Branch</th>
                         <th></th>
-                        <tr *ngFor="let student of students">
+                        <th></th>
+                        <tr *ngFor="let student of filteredStudents">
                             <td>{{student.rollNo}}</td>
                             <td>{{student.name}}</td>
                             <td>{{student.branch}}</td>
                             <td><a [routerLink]="['/students',student._id]"> View Details</a></td>
+                            <td><button class="btn btn-default" (click)="removeStudent(student._id)"><span class="glyphicon glyphicon-trash"></span></button></td>
                         </tr>
                     </table>
                 </div>
