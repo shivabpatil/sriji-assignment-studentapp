@@ -5,10 +5,12 @@ import { MaterialModule } from '@angular/material'
 import { FlexLayoutModule } from "@angular/flex-layout";
 import 'hammerjs';
 import { AppComponent } from './app.component';
+import { StudentListComponent } from './student-list/student-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StudentListComponent
   ],
   imports: [
     BrowserModule,
